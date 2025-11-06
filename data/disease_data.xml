@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1"> <record id="disease_cat_virus" model="hr.hospital.disease">
+            <field name="name">Вірусні інфекції</field>
+            <field name="is_contagious">True</field>
+            <field name="danger_level">medium</field>
+        </record>
+        <record id="disease_cat_cardio" model="hr.hospital.disease">
+            <field name="name">Серцево-судинні</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">high</field>
+        </record>
+        <record id="disease_cat_trauma" model="hr.hospital.disease">
+            <field name="name">Травматологія</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">medium</field>
+        </record>
+        <record id="disease_cat_gastro" model="hr.hospital.disease">
+            <field name="name">Гастроентерологія</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">medium</field>
+        </record>
+        <record id="disease_flu" model="hr.hospital.disease">
+            <field name="name">Грип</field>
+            <field name="code_icd10">J11</field>
+            <field name="is_contagious">True</field>
+            <field name="danger_level">medium</field>
+            <field name="parent_id" ref="disease_cat_virus"/>
+        </record>
+        <record id="disease_covid" model="hr.hospital.disease">
+            <field name="name">COVID-19</field>
+            <field name="code_icd10">U07.1</field>
+            <field name="is_contagious">True</field>
+            <field name="danger_level">high</field>
+            <field name="parent_id" ref="disease_cat_virus"/>
+        </record>
+        <record id="disease_cold" model="hr.hospital.disease">
+            <field name="name">Застуда</field>
+            <field name="code_icd10">J00</field>
+            <field name="is_contagious">True</field>
+            <field name="danger_level">low</field>
+            <field name="parent_id" ref="disease_cat_virus"/>
+        </record>
+        <record id="disease_hypertension" model="hr.hospital.disease">
+            <field name="name">Гіпертонія</field>
+            <field name="code_icd10">I10</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">medium</field>
+            <field name="parent_id" ref="disease_cat_cardio"/>
+        </record>
+        <record id="disease_arrhythmia" model="hr.hospital.disease">
+            <field name="name">Аритмія</field>
+            <field name="code_icd10">I49</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">high</field>
+            <field name="parent_id" ref="disease_cat_cardio"/>
+        </record>
+        <record id="disease_fracture" model="hr.hospital.disease">
+            <field name="name">Перелом</field>
+            <field name="code_icd10">S52</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">medium</field>
+            <field name="parent_id" ref="disease_cat_trauma"/>
+        </record>
+        <record id="disease_gastritis" model="hr.hospital.disease">
+            <field name="name">Гастрит</field>
+            <field name="code_icd10">K29</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">low</field>
+            <field name="parent_id" ref="disease_cat_gastro"/>
+        </record>
+        <record id="disease_allergy" model="hr.hospital.disease">
+            <field name="name">Алергія</field>
+            <field name="code_icd10">T78</field>
+            <field name="is_contagious">False</field>
+            <field name="danger_level">low</field>
+        </record>
+    </data>
+</odoo>

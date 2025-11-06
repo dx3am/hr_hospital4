@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="patient_doctor_history_tree" model="ir.ui.view">
+        <field name="name">patient.doctor.history.tree</field>
+        <field name="model">patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="active == False">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="assign_date"/>
+                <field name="end_date"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="patient_doctor_history_form" model="ir.ui.view">
+        <field name="name">patient.doctor.history.form</field>
+        <field name="model">patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="patient_id" required="1"/>
+                        <field name="doctor_id" required="1"/>
+                        <field name="assign_date" required="1"/>
+                        <field name="end_date"
+                               attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="Change Reason">
+                        <field name="change_reason" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_doctor_history_action"
+            model="ir.actions.act_window">
+        <field name="name">Doctor Assignment History</field>
+        <field name="res_model">patient.doctor.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

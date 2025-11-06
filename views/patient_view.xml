@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.tree</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="full_name"/>
+                <field name="birthday"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="personal_doctor_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.form</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_create_new_visit"
+                            string="Create Visit"
+                            type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_patient_visits"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-calendar">
+                            <field name="visit_count" widget="statinfo"
+                                   string="Visits"/>
+                        </button>
+                    </div>
+
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="full_name" readonly="1"
+                                   placeholder="Повне ім'я"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Personal Info (п. 1.1)">
+                            <field name="last_name" required="1"/>
+                            <field name="first_name" required="1"/>
+                            <field name="middle_name"/>
+                            <field name="birthday"/>
+                            <field name="age" readonly="1"/>
+                            <field name="gender"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="country_id"/>
+                            <field name="language_id"/>
+                        </group>
+                        <group string="Medical Info (п. 2.1)">
+                            <field name="personal_doctor_id"/>
+                            <field name="passport_data"/>
+                            <field name="contact_person_id"/>
+                            <field name="blood_type"/>
+                        </group>
+                        <group string="Insurance (п. 2.1)">
+                            <field name="insurance_partner_id"/>
+                            <field name="insurance_policy_number"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Doctor History">
+                            <field name="history_ids" readonly="1"/>
+                        </page>
+                        <page string="Diagnoses History">
+                            <field name="diagnosis_ids" readonly="1">
+                                <tree>
+                                    <field name="visit_id"/>
+                                    <field name="disease_id"/>
+                                    <field name="approving_doctor_id"/>
+                                    <field name="is_approved"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Allergies">
+                            <field name="allergies"
+                                   placeholder="Вкажіть алергії..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_search" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.search</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="full_name"
+                       filter_domain="['|', '|', ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('middle_name', 'ilike', self)]"/>
+                <field name="phone"/>
+                <field name="personal_doctor_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_action" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr.hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id"
+               ref="hr_hospital.hr_hospital_patient_search"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            No patients found. Let's create one!
+          </p>
+        </field>
+    </record>
+</odoo>

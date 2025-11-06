@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_hospital_contact_person_tree" model="ir.ui.view">
+        <field name="name">contact.person.tree</field>
+        <field name="model">contact.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="full_name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_contact_person_form" model="ir.ui.view">
+        <field name="name">contact.person.form</field>
+        <field name="model">contact.person</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="full_name" readonly="1"
+                                   placeholder="Повне ім'я"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Personal Info">
+                            <field name="last_name" required="1"/>
+                            <field name="first_name" required="1"/>
+                            <field name="middle_name"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                        </group>
+                        <group string="Details">
+                            <field name="birthday"/>
+                            <field name="age" readonly="1"/>
+                            <field name="gender"/>
+                            <field name="country_id"/>
+                            <field name="language_id"/>
+                            <field name="patient_id"/>
+                            </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_contact_person_action"
+            model="ir.actions.act_window">
+        <field name="name">Contact Persons</field>
+        <field name="res_model">contact.person</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

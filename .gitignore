@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyd
+*.pyo
+*.pdb
+*.pyc
+*.pyo
+
+# Python virtual environment
+venv/
+.venv/
+ENV/
+env/
+
+# Odoo files
+*.log
+*.db
+*.sql
+*.sqlite3
+*.mo
+*.pot
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.zip
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+.eggs/

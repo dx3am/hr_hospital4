@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_diagnosis_tree" model="ir.ui.view">
+        <field name="name">medical.diagnosis.tree</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="is_approved == True"
+                  decoration-warning="is_approved == False">
+                <field name="visit_id"/>
+                <field name="disease_id"/>
+                <field name="severity"/>
+                <field name="is_approved"/>
+                <field name="approving_doctor_id"/>
+                <field name="approval_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_form" model="ir.ui.view">
+        <field name="name">medical.diagnosis.form</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_approve_diagnosis"
+                            string="Затвердити"
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible': [('is_approved', '=', True)]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="visit_id" required="1"/>
+                        <field name="disease_id" required="1"/>
+                        <field name="severity"/>
+                    </group>
+                    <group string="Approval Status">
+                        <field name="is_approved" readonly="1"/>
+                        <field name="approving_doctor_id" readonly="1"/>
+                        <field name="approval_date" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" nolabel="1"
+                                   placeholder="Детальний опис діагнозу..."/>
+                        </page>
+                        <page string="Treatment">
+                            <field name="treatment" widget="html" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_pivot" model="ir.ui.view">
+        <field name="name">medical.diagnosis.pivot</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="disease_type_id" type="row"/>
+                <field name="disease_id" type="row"/>
+                <field name="visit_date" interval="year" type="col"/>
+                <field name="visit_date" interval="month" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_graph" model="ir.ui.view">
+        <field name="name">medical.diagnosis.graph</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="disease_type_id" type="row"/>
+                <field name="visit_date" interval="month" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_action" model="ir.actions.act_window">
+        <field name="name">Diagnoses</field>
+        <field name="res_model">medical.diagnosis</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+</odoo>

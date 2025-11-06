@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="contact_person_smith" model="contact.person">
+            <field name="last_name">Сміт</field>
+            <field name="first_name">Джейн</field>
+            <field name="phone">+380501112233</field>
+        </record>
+        <record id="contact_person_parker" model="contact.person">
+            <field name="last_name">Паркер</field>
+            <field name="first_name">Мей</field>
+            <field name="phone">+380504445566</field>
+        </record>
+        <record id="contact_jane_sister" model="contact.person">
+            <field name="last_name">Сміт</field>
+            <field name="first_name">Анна</field>
+            <field name="phone">+380991112233</field>
+        </record>
+        <record id="contact_stark_pepper" model="contact.person">
+            <field name="last_name">Поттс</field>
+            <field name="first_name">Пеппер</field>
+            <field name="phone">+380672223344</field>
+        </record>
+        <record id="contact_banner_betty" model="contact.person">
+            <field name="last_name">Росс</field>
+            <field name="first_name">Бетті</field>
+            <field name="phone">+380634445566</field>
+        </record>
+        <record id="contact_rogers" model="contact.person">
+            <field name="last_name">Барнс</field>
+            <field name="first_name">Бакі</field>
+            <field name="phone">+380505556677</field>
+        </record>
+        <record id="contact_romanoff" model="contact.person">
+            <field name="last_name">Бартон</field>
+            <field name="first_name">Клінт</field>
+            <field name="phone">+380976667788</field>
+        </record>
+        <record id="contact_thor" model="contact.person">
+            <field name="last_name">Локі</field>
+            <field name="first_name">Локі</field>
+            <field name="phone">+380687778899</field>
+        </record>
+        <record id="contact_tchalla" model="contact.person">
+            <field name="last_name">Окойе</field>
+            <field name="first_name">Окойе</field>
+            <field name="phone">+380958889900</field>
+        </record>
+        <record id="contact_strange_wong" model="contact.person">
+            <field name="last_name">Вонг</field>
+            <field name="first_name">Вонг</field>
+            <field name="phone">+380509990011</field>
+        </record>
+        <record id="contact_maximoff" model="contact.person">
+            <field name="last_name">Віжн</field>
+            <field name="first_name">Віжн</field>
+            <field name="phone">+380670001122</field>
+        </record>
+        <record id="contact_sam_wilson" model="contact.person">
+            <field name="last_name">Роудс</field>
+            <field name="first_name">Джеймс</field>
+            <field name="phone">+380931112233</field>
+        </record>
+        <record id="contact_groot" model="contact.person">
+            <field name="last_name">Ракета</field>
+            <field name="first_name">Ракета</field>
+            <field name="phone">+380982223344</field>
+        </record>
+        <record id="contact_quill" model="contact.person">
+            <field name="last_name">Дракс</field>
+            <field name="first_name">Дракс</field>
+            <field name="phone">+380663334455</field>
+        </record>
+        <record id="contact_gamora" model="contact.person">
+            <field name="last_name">Квілл</field>
+            <field name="first_name">Пітер (Контакт)</field>
+            <field name="phone">+380663334455</field>
+        </record>
+        <record id="patient_john" model="hr.hospital.patient">
+            <field name="last_name">Доу</field>
+            <field name="first_name">Джон</field>
+            <field name="birthday">1985-01-15</field>
+            <field name="personal_doctor_id" ref="doctor_house"/>
+            <field name="allergies">Пеніцилін</field>
+            <field name="contact_person_id" ref="contact_person_smith"/>
+            <field name="blood_type">o_neg</field>
+        </record>
+        <record id="patient_jane" model="hr.hospital.patient">
+            <field name="last_name">Сміт</field>
+            <field name="first_name">Джейн</field>
+            <field name="birthday">1992-03-22</field>
+            <field name="personal_doctor_id" ref="doctor_strange"/>
+            <field name="blood_type">a_pos</field>
+            <field name="contact_person_id" ref="contact_jane_sister"/>
+            <field name="allergies">Аспірин</field>
+        </record>
+        <record id="patient_peter" model="hr.hospital.patient">
+            <field name="last_name">Паркер</field>
+            <field name="first_name">Пітер</field>
+            <field name="birthday">2001-08-10</field>
+            <field name="personal_doctor_id" ref="doctor_who"/>
+            <field name="contact_person_id" ref="contact_person_parker"/>
+        </record>
+        <record id="patient_stark" model="hr.hospital.patient">
+            <field name="last_name">Старк</field>
+            <field name="first_name">Тоні</field>
+            <field name="birthday">1970-05-29</field>
+            <field name="personal_doctor_id" ref="doctor_strange"/>
+            <field name="blood_type">ab_pos</field>
+            <field name="contact_person_id" ref="contact_stark_pepper"/>
+        </record>
+        <record id="patient_banner" model="hr.hospital.patient">
+            <field name="last_name">Беннер</field>
+            <field name="first_name">Брюс</field>
+            <field name="birthday">1969-12-18</field>
+            <field name="personal_doctor_id" ref="doctor_house"/>
+            <field name="allergies">Гнів</field>
+            <field name="contact_person_id" ref="contact_banner_betty"/>
+        </record>
+        <record id="patient_rogers" model="hr.hospital.patient">
+            <field name="last_name">Роджерс</field>
+            <field name="first_name">Стів</field>
+            <field name="birthday">1918-07-04</field>
+            <field name="personal_doctor_id" ref="doctor_wilson"/>
+            <field name="contact_person_id" ref="contact_rogers"/>
+            <field name="blood_type">a_pos</field>
+        </record>
+        <record id="patient_romanoff" model="hr.hospital.patient">
+            <field name="last_name">Романофф</field>
+            <field name="first_name">Наташа</field>
+            <field name="birthday">1984-11-22</field>
+            <field name="personal_doctor_id" ref="doctor_grey"/>
+            <field name="contact_person_id" ref="contact_romanoff"/>
+            <field name="blood_type">o_neg</field>
+            <field name="allergies">Довіра</field>
+        </record>
+        <record id="patient_thor" model="hr.hospital.patient">
+            <field name="last_name">Одінсон</field>
+            <field name="first_name">Тор</field>
+            <field name="birthday">1965-01-01</field>
+            <field name="personal_doctor_id" ref="doctor_caddy"/>
+            <field name="contact_person_id" ref="contact_thor"/>
+            <field name="allergies">Пиво</field>
+        </record>
+        <record id="patient_tchalla" model="hr.hospital.patient">
+            <field name="last_name">Т'Чалла</field>
+            <field name="first_name">Т'Чалла</field>
+            <field name="birthday">1980-10-29</field>
+            <field name="personal_doctor_id" ref="doctor_house"/>
+            <field name="contact_person_id" ref="contact_tchalla"/>
+        </record>
+        <record id="patient_dr_strange" model="hr.hospital.patient">
+            <field name="last_name">Стрендж</field>
+            <field name="first_name">Стівен (Пацієнт)</field>
+            <field name="birthday">1930-11-11</field>
+            <field name="personal_doctor_id" ref="doctor_strange"/>
+            <field name="contact_person_id" ref="contact_strange_wong"/>
+            <field name="allergies">Его</field>
+        </record>
+        <record id="patient_maximoff" model="hr.hospital.patient">
+            <field name="last_name">Максімофф</field>
+            <field name="first_name">Ванда</field>
+            <field name="birthday">1989-02-10</field>
+            <field name="personal_doctor_id" ref="intern_dory"/>
+            <field name="contact_person_id" ref="contact_maximoff"/>
+        </record>
+        <record id="patient_sam_wilson" model="hr.hospital.patient">
+            <field name="last_name">Вілсон</field>
+            <field name="first_name">Сем</field>
+            <field name="birthday">1978-04-23</field>
+            <field name="personal_doctor_id" ref="intern_turk"/>
+            <field name="contact_person_id" ref="contact_sam_wilson"/>
+            <field name="allergies">Птахи</field>
+        </record>
+        <record id="patient_groot" model="hr.hospital.patient">
+            <field name="last_name">Грут</field>
+            <field name="first_name">Я</field>
+            <field name="birthday">2014-01-01</field>
+            <field name="personal_doctor_id" ref="doctor_who"/>
+            <field name="contact_person_id" ref="contact_groot"/>
+            <field name="allergies">Кора</field>
+        </record>
+        <record id="patient_quill" model="hr.hospital.patient">
+            <field name="last_name">Квілл</field>
+            <field name="first_name">Пітер</field>
+            <field name="birthday">1980-02-04</field>
+            <field name="personal_doctor_id" ref="doctor_wilson"/>
+            <field name="contact_person_id" ref="contact_quill"/>
+        </record>
+        <record id="patient_gamora" model="hr.hospital.patient">
+            <field name="last_name">Гамора</field>
+            <field name="first_name">Гамора</field>
+            <field name="birthday">1979-04-13</field>
+            <field name="personal_doctor_id" ref="doctor_grey"/>
+            <field name="contact_person_id" ref="contact_gamora"/>
+        </record>
+    </data>
+</odoo>

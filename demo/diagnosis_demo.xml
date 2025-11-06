@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="diag_1_visit_2" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_2"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="description">Пацієнт скаржиться на лихоманку.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="doctor_strange"/>
+        </record>
+        <record id="diag_2_visit_intern_1" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_intern_1"/>
+            <field name="disease_id" ref="disease_covid"/> <field name="description">Підозра на COVID.</field>
+            <field name="severity">high</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_3_visit_5" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_5"/>
+            <field name="disease_id" ref="disease_hypertension"/> <field name="description">Підвищений тиск.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_wilson"/>
+        </record>
+        <record id="diag_4_visit_6" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_6"/>
+            <field name="disease_id" ref="disease_cold"/> <field name="description">Легка застуда.</field>
+            <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_grey"/>
+        </record>
+        <record id="diag_5_visit_8" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_8"/>
+            <field name="disease_id" ref="disease_hypertension"/> <field name="description">Стрес, гіпертонія.</field>
+            <field name="severity">high</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_6_visit_10" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_10"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="description">Схоже на грип.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">False</field> </record>
+        <record id="diag_7_visit_11" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_11"/>
+            <field name="disease_id" ref="disease_cold"/> <field name="description">Просто застуда.</field>
+            <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_strange"/> </record>
+        <record id="diag_8_visit_15" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_15"/>
+            <field name="disease_id" ref="disease_covid"/> <field name="description">Повторний огляд після COVID-19.</field>
+            <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_9_visit_16" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_16"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="description">Ускладнення після грипу.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_strange"/>
+        </record>
+        <record id="diag_10_visit_16_2" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_16"/>
+            <field name="disease_id" ref="disease_hypertension"/> <field name="description">Тиск на фоні хвороби.</field>
+            <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_strange"/>
+        </record>
+        <record id="diag_11_visit_17" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_17"/>
+            <field name="disease_id" ref="disease_cold"/> <field name="description">Профілактичний огляд.</field>
+            <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_who"/>
+        </record>
+        <record id="diag_12_visit_19" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_19"/>
+            <field name="disease_id" ref="disease_hypertension"/> <field name="description">Контроль тиску.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_13_visit_22" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_22"/>
+            <field name="disease_id" ref="disease_covid"/> <field name="description">Терміново, підозра на COVID.</field>
+            <field name="severity">high</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_caddy"/>
+        </record>
+        <record id="diag_14_visit_25" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_25"/>
+            <field name="disease_id" ref="disease_fracture"/> <field name="description">Повторний огляд. Перелом.</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_15" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_2"/>
+            <field name="disease_id" ref="disease_hypertension"/> <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_strange"/>
+        </record>
+        <record id="diag_16" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_intern_1"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="severity">medium</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_17" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_5"/>
+            <field name="disease_id" ref="disease_cold"/> <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_wilson"/>
+        </record>
+        <record id="diag_18" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_6"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="severity">medium</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_grey"/>
+        </record>
+        <record id="diag_19" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_8"/>
+            <field name="disease_id" ref="disease_cold"/> <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_20" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_15"/>
+            <field name="disease_id" ref="disease_flu"/> <field name="severity">low</field>
+            <field name="is_approved">True</field>
+            <field name="approving_doctor_id" ref="hr_hospital.doctor_house"/>
+        </record>
+        <record id="diag_21" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_1"/>
+            <field name="disease_id" ref="disease_cold"/>
+            <field name="severity">low</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_22" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_3"/>
+            <field name="disease_id" ref="disease_flu"/>
+            <field name="severity">medium</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_23" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_7"/>
+            <field name="disease_id" ref="disease_hypertension"/>
+            <field name="severity">low</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_24" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_9"/>
+            <field name="disease_id" ref="disease_fracture"/>
+            <field name="description">Пропущений візит, але діагноз відомий</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_25" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_12"/>
+            <field name="disease_id" ref="disease_cold"/>
+            <field name="severity">low</field>
+            <field name="is_approved">False</field>
+        </record>
+        <record id="diag_26" model="medical.diagnosis">
+            <field name="visit_id" ref="visit_14"/>
+            <field name="disease_id" ref="disease_allergy"/>
+            <field name="description">Алергія на котів</field>
+            <field name="severity">medium</field>
+            <field name="is_approved">False</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="schedule_house_mon" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+            <field name="day_of_week">1</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">17.0</field>
+        </record>
+        <record id="schedule_house_tue" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+            <field name="day_of_week">2</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">17.0</field>
+        </record>
+        <record id="schedule_house_wed" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+            <field name="day_of_week">3</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">17.0</field>
+        </record>
+        <record id="schedule_strange_mon" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_strange"/>
+            <field name="day_of_week">1</field>
+            <field name="start_time">10.0</field>
+            <field name="end_time">18.0</field>
+        </record>
+        <record id="schedule_strange_fri" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_strange"/>
+            <field name="day_of_week">5</field>
+            <field name="start_time">10.0</field>
+            <field name="end_time">18.0</field>
+        </record>
+        <record id="schedule_who_vacation" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_who"/>
+            <field name="date" eval="(DateTime.now() + relativedelta(days=5)).strftime('%Y-%m-%d')"/>
+            <field name="schedule_type">vacation</field>
+        </record>
+        <record id="schedule_dory_mon" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.intern_dory"/>
+            <field name="day_of_week">1</field>
+            <field name="start_time">8.0</field>
+            <field name="end_time">16.0</field>
+        </record>
+        <record id="schedule_dory_wed" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.intern_dory"/>
+            <field name="day_of_week">3</field>
+            <field name="start_time">8.0</field>
+            <field name="end_time">16.0</field>
+        </record>
+        <record id="schedule_turk_tue" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.intern_turk"/>
+            <field name="day_of_week">2</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">18.0</field>
+        </record>
+        <record id="schedule_turk_thu" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.intern_turk"/>
+            <field name="day_of_week">4</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">18.0</field>
+        </record>
+        <record id="schedule_grey_mon" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_grey"/>
+            <field name="day_of_week">1</field>
+            <field name="start_time">10.0</field>
+            <field name="end_time">19.0</field>
+        </record>
+        <record id="schedule_grey_fri" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_grey"/>
+            <field name="day_of_week">5</field>
+            <field name="start_time">10.0</field>
+            <field name="end_time">19.0</field>
+        </record>
+        <record id="schedule_wilson_tue" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_wilson"/>
+            <field name="day_of_week">2</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">15.0</field>
+        </record>
+        <record id="schedule_wilson_thu" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_wilson"/>
+            <field name="day_of_week">4</field>
+            <field name="start_time">9.0</field>
+            <field name="end_time">15.0</field>
+        </record>
+        <record id="schedule_caddy_mon" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_caddy"/>
+            <field name="day_of_week">1</field>
+            <field name="start_time">8.0</field>
+            <field name="end_time">17.0</field>
+        </record>
+        <record id="schedule_caddy_tue" model="doctor.schedule">
+            <field name="doctor_id" ref="hr_hospital.doctor_caddy"/>
+            <field name="day_of_week">2</field>
+            <field name="start_time">8.0</field>
+            <field name="end_time">17.0</field>
+        </record>
+    </data>
+</odoo>

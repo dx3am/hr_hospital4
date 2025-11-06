@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="doctor_schedule_wizard_form" model="ir.ui.view">
+        <field name="name">doctor.schedule.wizard.form</field>
+        <field name="model">doctor.schedule.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="doctor_id" required="1"/>
+                    <field name="week_start_date" required="1"/>
+                    <field name="week_count" required="1"/>
+                    <field name="schedule_type" required="1"/>
+                </group>
+                <group string="Days of Week">
+                    <field name="day_mon"/>
+                    <field name="day_tue"/>
+                    <field name="day_wed"/>
+                    <field name="day_thu"/>
+                    <field name="day_fri"/>
+                    <field name="day_sat"/>
+                    <field name="day_sun"/>
+                </group>
+                <group string="Work Time">
+                    <field name="start_time" widget="float_time"/>
+                    <field name="end_time" widget="float_time"/>
+                </group>
+                <group string="Break Time (Optional)">
+                    <field name="break_start_time" widget="float_time"/>
+                    <field name="break_end_time" widget="float_time"/>
+                </group>
+                <footer>
+                    <button name="action_generate_schedule"
+                            string="Generate Schedule"
+                            type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_doctor_schedule_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Generate Schedule</field>
+        <field name="res_model">doctor.schedule.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

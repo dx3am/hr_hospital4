@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="visit_1" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_john"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now())"/>
+            <field name="status">planned</field>
+            <field name="visit_type">primary</field>
+        </record>
+        <record id="visit_2" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_jane"/>
+            <field name="doctor_id" ref="doctor_strange"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">urgent</field>
+        </record>
+        <record id="visit_3" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_peter"/>
+            <field name="doctor_id" ref="doctor_who"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=1))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">preventive</field>
+        </record>
+        <record id="visit_intern_1" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_stark"/>
+            <field name="doctor_id" ref="intern_dory"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=2))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=2))"/>
+            <field name="status">completed</field>
+        </record>
+
+        <record id="visit_5" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_rogers"/>
+            <field name="doctor_id" ref="doctor_wilson"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=5))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=5))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_6" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_romanoff"/>
+            <field name="doctor_id" ref="doctor_grey"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=4))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=4))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_7" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_thor"/>
+            <field name="doctor_id" ref="doctor_caddy"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=3))"/>
+            <field name="status">cancelled</field>
+        </record>
+        <record id="visit_8" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_tchalla"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=2))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=2))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_9" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_dr_strange"/>
+            <field name="doctor_id" ref="doctor_strange"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">missed</field>
+        </record>
+        <record id="visit_10" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_maximoff"/>
+            <field name="doctor_id" ref="intern_dory"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_11" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_sam_wilson"/>
+            <field name="doctor_id" ref="intern_turk"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_12" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_groot"/>
+            <field name="doctor_id" ref="doctor_who"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=1))"/>
+            <field name="status">planned</field>
+        </record>
+        <record id="visit_13" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_quill"/>
+            <field name="doctor_id" ref="doctor_wilson"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=2))"/>
+            <field name="status">planned</field>
+        </record>
+        <record id="visit_14" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_gamora"/>
+            <field name="doctor_id" ref="doctor_grey"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=3))"/>
+            <field name="status">planned</field>
+        </record>
+        <record id="visit_15" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_john"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=10))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=10))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_16" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_jane"/>
+            <field name="doctor_id" ref="doctor_strange"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=8))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=8))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_17" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_peter"/>
+            <field name="doctor_id" ref="doctor_who"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=7))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=7))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_18" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_stark"/>
+            <field name="doctor_id" ref="doctor_strange"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=4))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">preventive</field>
+        </record>
+        <record id="visit_19" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_banner"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=6))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=6))"/>
+            <field name="status">completed</field>
+        </record>
+        <record id="visit_20" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_rogers"/>
+            <field name="doctor_id" ref="doctor_wilson"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=5))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_21" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_romanoff"/>
+            <field name="doctor_id" ref="doctor_grey"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=6))"/>
+            <field name="status">planned</field>
+        </record>
+        <record id="visit_22" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_thor"/>
+            <field name="doctor_id" ref="doctor_caddy"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">urgent</field>
+        </record>
+        <record id="visit_23" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_tchalla"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=7))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_24" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_maximoff"/>
+            <field name="doctor_id" ref="intern_dory"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=8))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_25" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_john"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=20))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=20))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_26" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_peter"/>
+            <field name="doctor_id" ref="intern_turk"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=3))"/>
+            <field name="actual_visit_date" eval="(DateTime.now() - relativedelta(days=3))"/>
+            <field name="status">completed</field>
+            <field name="visit_type">repeat</field>
+        </record>
+        <record id="visit_27" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_stark"/>
+            <field name="doctor_id" ref="doctor_strange"/>
+            <field name="visit_date" eval="(DateTime.now() - relativedelta(days=1))"/>
+            <field name="status">missed</field>
+            <field name="visit_type">primary</field>
+        </record>
+        <record id="visit_28" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_banner"/>
+            <field name="doctor_id" ref="doctor_house"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=2))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">preventive</field>
+        </record>
+        <record id="visit_29" model="hr.hospital.patient.visit">
+            <field name="patient_id" ref="patient_rogers"/>
+            <field name="doctor_id" ref="doctor_wilson"/>
+            <field name="visit_date" eval="(DateTime.now() + relativedelta(days=3))"/>
+            <field name="status">planned</field>
+            <field name="visit_type">urgent</field>
+        </record>
+    </data>
+</odoo>

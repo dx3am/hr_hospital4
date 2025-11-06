@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="history_john_old" model="patient.doctor.history">
+            <field name="patient_id" ref="hr_hospital.patient_john"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_strange"/>
+            <field name="assign_date" eval="(DateTime.now() - relativedelta(years=1)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.now() - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+            <field name="active">False</field>
+            <field name="change_reason">Перевівся до Dr. House</field>
+        </record>
+
+        <record id="history_stark_old" model="patient.doctor.history">
+            <field name="patient_id" ref="hr_hospital.patient_stark"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_caddy"/>
+            <field name="assign_date" eval="(DateTime.now() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.now() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+            <field name="active">False</field>
+            <field name="change_reason">Перевівся до Dr. Strange</field>
+        </record>
+
+        <record id="history_banner_old" model="patient.doctor.history">
+            <field name="patient_id" ref="hr_hospital.patient_banner"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_wilson"/>
+            <field name="assign_date" eval="(DateTime.now() - relativedelta(months=3)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.now() - relativedelta(days=10)).strftime('%Y-%m-%d')"/>
+            <field name="active">False</field>
+            <field name="change_reason">Зміна спеціаліста</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="hr_hospital_root_menu"
+        name="Hospital"
+        web_icon="hr_hospital,static/description/icon.png"
+        sequence="10"/>
+
+    <menuitem
+        id="hr_hospital_patient_menu"
+        name="Пацієнти"
+        parent="hr_hospital_root_menu"
+        action="hr_hospital_patient_action"
+        sequence="10"/>
+
+    <menuitem
+        id="hr_hospital_doctor_menu"
+        name="Лікарі"
+        parent="hr_hospital_root_menu"
+        action="hr_hospital_doctor_action"
+        sequence="20"/>
+
+    <menuitem
+        id="hr_hospital_visit_menu"
+        name="Візити"
+        parent="hr_hospital_root_menu"
+        action="hr_hospital_patient_visit_action"
+        sequence="30"/>
+
+    <menuitem
+        id="hr_hospital_config_menu"
+        name="Налаштування"
+        parent="hr_hospital_root_menu"
+        sequence="100"/>
+
+    <menuitem
+        id="hr_hospital_disease_menu"
+        name="Види захворювань"
+        parent="hr_hospital_config_menu"
+        action="hr_hospital_disease_action"
+        sequence="10"/>
+
+    <menuitem
+        id="hr_hospital_speciality_menu"
+        name="Спеціальності Лікарів"
+        parent="hr_hospital_config_menu"
+        action="doctor_speciality_action"
+        sequence="20"/>
+
+    <menuitem
+        id="hr_hospital_schedule_menu"
+        name="Розклади Лікарів"
+        parent="hr_hospital_config_menu"
+        action="doctor_schedule_action"
+        sequence="30"/>
+
+    <menuitem
+        id="hr_hospital_contact_person_menu"
+        name="Контактні особи"
+        parent="hr_hospital_config_menu"
+        action="hr_hospital_contact_person_action"
+        sequence="40"/>
+
+    <menuitem
+        id="hr_hospital_diagnosis_menu"
+        name="Діагнози (Всі)"
+        parent="hr_hospital_config_menu"
+        action="medical_diagnosis_action"
+        sequence="50"/>
+
+    <menuitem
+        id="hr_hospital_history_menu"
+        name="Історія призначень"
+        parent="hr_hospital_config_menu"
+        action="patient_doctor_history_action"
+        sequence="60"/>
+
+        <menuitem
+        id="menu_disease_report"
+        name="Disease Report"
+        parent="hr_hospital_config_menu"
+        action="action_disease_report"
+        sequence="90"/>
+
+        <menuitem
+        id="menu_doctor_schedule_wizard"
+        name="Generate Doctor Schedule"
+        parent="hr_hospital_config_menu"
+        action="action_doctor_schedule_wizard"
+        sequence="91"/>
+
+
+</odoo>

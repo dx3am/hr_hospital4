@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="spec_cardiology" model="doctor.speciality">
+            <field name="name">Кардіологія</field>
+            <field name="code">CARD</field>
+        </record>
+        <record id="spec_neurology" model="doctor.speciality">
+            <field name="name">Неврологія</field>
+            <field name="code">NEURO</field>
+        </record>
+        <record id="spec_pediatrics" model="doctor.speciality">
+            <field name="name">Педіатрія</field>
+            <field name="code">PEDIA</field>
+        </record>
+        <record id="spec_therapist" model="doctor.speciality">
+            <field name="name">Терапія</field>
+            <field name="code">THERA</field>
+        </record>
+        <record id="spec_surgery" model="doctor.speciality">
+            <field name="name">Хірургія</field>
+            <field name="code">SURG</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_hospital_doctor,access.hr.hospital.doctor,model_hr_hospital_doctor,base.group_user,1,1,1,1
+access_hr_hospital_patient,access.hr.hospital.patient,model_hr_hospital_patient,base.group_user,1,1,1,1
+access_hr_hospital_disease,access.hr.hospital.disease,model_hr_hospital_disease,base.group_user,1,1,1,1
+access_hr_hospital_patient_visit,access.hr.hospital.patient.visit,model_hr_hospital_patient_visit,base.group_user,1,1,1,1
+access_hr_hospital_contact_person,access.hr.hospital.contact.person,model_contact_person,base.group_user,1,1,1,1
+access_hr_hospital_medical_diagnosis,access.hr.hospital.medical.diagnosis,model_medical_diagnosis,base.group_user,1,1,1,1
+access_hr_hospital_doctor_speciality,access.hr.hospital.doctor.speciality,model_doctor_speciality,base.group_user,1,1,1,1
+access_hr_hospital_doctor_schedule,access.hr.hospital.doctor.schedule,model_doctor_schedule,base.group_user,1,1,1,1
+access_hr_hospital_patient_doctor_history,access.hr.hospital.patient.doctor.history,model_patient_doctor_history,base.group_user,1,1,1,1
+access_hr_hospital_mass_reassign_doctor_wizard,access.wizard.mass.reassign.doctor,model_mass_reassign_doctor_wizard,base.group_user,1,1,1,1
+access_hr_hospital_disease_report_wizard,access.wizard.disease.report,model_disease_report_wizard,base.group_user,1,1,1,1
+access_hr_hospital_reschedule_visit_wizard,access.wizard.reschedule.visit,model_reschedule_visit_wizard,base.group_user,1,1,1,1
+access_hr_hospital_doctor_schedule_wizard,access.wizard.doctor.schedule,model_doctor_schedule_wizard,base.group_user,1,1,1,1
+access_hr_hospital_patient_card_export_wizard,access.wizard.patient.card.export,model_patient_card_export_wizard,base.group_user,1,1,1,1

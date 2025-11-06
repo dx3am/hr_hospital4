@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="user_doctor_house" model="res.users">
+            <field name="name">Dr. House (User)</field>
+            <field name="login">house</field>
+            <field name="password">house</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="user_doctor_intern" model="res.users">
+            <field name="name">Dr. Intern (User)</field>
+            <field name="login">intern</field>
+            <field name="password">intern</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="doctor_house" model="hr.hospital.doctor">
+            <field name="last_name">Хаус</field>
+            <field name="first_name">Грегорі</field>
+            <field name="specialty_id" ref="spec_therapist"/>
+            <field name="license_number">LIC-HOUSE</field>
+            <field name="license_date">2005-05-10</field>
+            <field name="rating">4.9</field>
+            <field name="is_intern">False</field>
+            <field name="user_id" ref="user_doctor_house"/>
+        </record>
+        <record id="doctor_strange" model="hr.hospital.doctor">
+            <field name="last_name">Стрендж</field>
+            <field name="first_name">Стівен</field>
+            <field name="specialty_id" ref="spec_surgery"/>
+            <field name="license_number">LIC-STRANGE</field>
+            <field name="license_date">2010-01-15</field>
+            <field name="rating">4.7</field>
+            <field name="is_intern">False</field>
+        </record>
+        <record id="doctor_who" model="hr.hospital.doctor">
+            <field name="last_name">Хто</field>
+            <field name="first_name">Доктор</field>
+            <field name="specialty_id" ref="spec_therapist"/>
+            <field name="license_number">LIC-WHO</field>
+            <field name="license_date">1963-11-23</field>
+            <field name="rating">5.0</field>
+        </record>
+        <record id="intern_dory" model="hr.hospital.doctor">
+            <field name="last_name">Доріан</field>
+            <field name="first_name">Джон</field>
+            <field name="specialty_id" ref="spec_therapist"/>
+            <field name="license_number">LIC-DORY</field>
+            <field name="license_date" eval="(DateTime.now() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+            <field name="rating">3.0</field>
+            <field name="is_intern">True</field>
+            <field name="mentor_id" ref="doctor_house"/>
+            <field name="user_id" ref="user_doctor_intern"/>
+        </record>
+        <record id="intern_turk" model="hr.hospital.doctor">
+            <field name="last_name">Терк</field>
+            <field name="first_name">Крістофер</field>
+            <field name="specialty_id" ref="spec_surgery"/>
+            <field name="license_number">LIC-TURK</field>
+            <field name="license_date" eval="(DateTime.now() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+            <field name="rating">3.2</field>
+            <field name="is_intern">True</field>
+            <field name="mentor_id" ref="doctor_strange"/>
+        </record>
+        <record id="doctor_grey" model="hr.hospital.doctor">
+            <field name="last_name">Грей</field>
+            <field name="first_name">Мередіт</field>
+            <field name="specialty_id" ref="spec_surgery"/>
+            <field name="license_number">LIC-GREY</field>
+            <field name="license_date">2012-03-27</field>
+        </record>
+        <record id="doctor_wilson" model="hr.hospital.doctor">
+            <field name="last_name">Вілсон</field>
+            <field name="first_name">Джеймс</field>
+            <field name="specialty_id" ref="spec_cardiology"/>
+            <field name="license_number">LIC-WILSON</field>
+            <field name="license_date">2006-09-01</field>
+        </record>
+        <record id="doctor_caddy" model="hr.hospital.doctor">
+            <field name="last_name">Кадді</field>
+            <field name="first_name">Ліза</field>
+            <field name="specialty_id" ref="spec_therapist"/>
+            <field name="license_number">LIC-CUDDY</field>
+            <field name="license_date">2004-10-10</field>
+        </record>
+        <record id="intern_reid" model="hr.hospital.doctor">
+            <field name="last_name">Рід</field>
+            <field name="first_name">Елліот</field>
+            <field name="specialty_id" ref="spec_therapist"/>
+            <field name="license_number">LIC-REID</field>
+            <field name="license_date" eval="(DateTime.now() - relativedelta(months=3)).strftime('%Y-%m-%d')"/>
+            <field name="rating">3.5</field>
+            <field name="is_intern">True</field>
+            <field name="mentor_id" ref="doctor_house"/>
+        </record>
+        <record id="intern_wen" model="hr.hospital.doctor">
+            <field name="last_name">Вен</field>
+            <field name="first_name">Джінг-Мей</field>
+            <field name="specialty_id" ref="spec_surgery"/>
+            <field name="license_number">LIC-WEN</field>
+            <field name="license_date" eval="(DateTime.now() - relativedelta(months=5)).strftime('%Y-%m-%d')"/>
+            <field name="rating">3.1</field>
+            <field name="is_intern">True</field>
+            <field name="mentor_id" ref="doctor_grey"/>
+        </record>
+    </data>
+</odoo>

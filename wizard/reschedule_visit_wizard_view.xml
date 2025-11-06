@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="reschedule_visit_wizard_form" model="ir.ui.view">
+        <field name="name">reschedule.visit.wizard.form</field>
+        <field name="model">reschedule.visit.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="visit_id"/>
+                    <field name="new_doctor_id"
+                           placeholder="Залишити поточного лікаря"/>
+                    <field name="new_date"/>
+                    <field name="reschedule_reason"/>
+                </group>
+                <footer>
+                    <button name="action_reschedule" string="Reschedule"
+                            type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_reschedule_visit" model="ir.actions.act_window">
+        <field name="name">Reschedule Visit</field>
+        <field name="res_model">reschedule.visit.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id"
+               ref="hr_hospital.model_hr_hospital_patient_visit"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>
