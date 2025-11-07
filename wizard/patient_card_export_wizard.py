@@ -6,7 +6,7 @@ import json
 import csv
 import io
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -22,7 +22,9 @@ class PatientCardExportWizard(models.TransientModel):
     include_recommendations = fields.Boolean(default=True)
     language_id = fields.Many2one(
         comodel_name='res.lang',
-        default=lambda self: self.env.user.lang_id
+        default=lambda self: self.env['res.lang'].search(
+            [('code', '=', self.env.user.lang)], limit=1
+        )
     )
     export_format = fields.Selection(
         selection=[('json', 'JSON'), ('csv', 'CSV')],
@@ -30,7 +32,7 @@ class PatientCardExportWizard(models.TransientModel):
     )
 
     file_name = fields.Char()
-    file_data = fields.Binary(string='File to Download', readonly=True)
+    file_data = fields.Binary(readonly=True)
 
     @api.onchange('patient_id')
     def _onchange_patient_id(self):
@@ -129,7 +131,7 @@ class PatientCardExportWizard(models.TransientModel):
             file_content = output.getvalue().encode('utf-8')
 
         if not file_content:
-            raise UserError(self.env._("Неможливо згенерувати файл."))
+            raise UserError(_("Неможливо згенерувати файл."))
 
         self.write({
             'file_data': base64.b64encode(file_content),

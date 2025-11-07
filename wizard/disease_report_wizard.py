@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Defines the Disease Report Wizard."""
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class DiseaseReportWizard(models.TransientModel):
@@ -63,7 +63,7 @@ class DiseaseReportWizard(models.TransientModel):
 
         return {
             'type': 'ir.actions.act_window',
-            'name': self.env._('Disease Report'),
+            'name': _('Disease Report'),
             'res_model': 'medical.diagnosis',
             'view_mode': 'tree,form,pivot,graph',
             'domain': domain,

@@ -2,7 +2,7 @@
 """Defines the Doctor Schedule Wizard."""
 
 from datetime import timedelta
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -34,6 +34,7 @@ class DoctorScheduleWizard(models.TransientModel):
     day_sat = fields.Boolean(string="Субота")
     day_sun = fields.Boolean(string="Неділя")
 
+    # ВИПРАВЛЕНО: Прибрали зайві 'string' (W8113)
     start_time = fields.Float(required=True)
     end_time = fields.Float(required=True)
 
@@ -45,13 +46,13 @@ class DoctorScheduleWizard(models.TransientModel):
     def _check_times(self):
         for record in self:
             if record.end_time <= record.start_time:
-                raise UserError(self.env._("End time must be after start time."))
+                raise UserError(_("End time must be after start time."))
             if record.break_start_time and record.break_end_time:
                 if record.break_end_time <= record.break_start_time:
-                    raise UserError(self.env._("Break end time must be after break start time."))
+                    raise UserError(_("Break end time must be after break start time."))
                 if not (record.start_time < record.break_start_time <
                         record.break_end_time < record.end_time):
-                    raise UserError(self.env._("Break time must be within working hours."))
+                    raise UserError(_("Break time must be within working hours."))
 
     def action_generate_schedule(self):
         """Generates schedule slots based on wizard parameters."""

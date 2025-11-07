@@ -5,4 +5,4 @@ init-hook = 'import sys; sys.path.append("/home/vadim/odoo_clean/odoo")'
 
 [MESSAGES CONTROL]
 disable =
-    E0401, R0903, E1101, C0114, C0115, C0116, W0104, C8101, C8106, W0212, R0801
+    E0401, R0903, E1101, C0114, C0115, C0116, W0104, C8101, C8106, W0212, R0801, W8161
