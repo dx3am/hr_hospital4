@@ -34,7 +34,6 @@ class DoctorScheduleWizard(models.TransientModel):
     day_sat = fields.Boolean(string="Субота")
     day_sun = fields.Boolean(string="Неділя")
 
-    # ВИПРАВЛЕНО: Прибрали зайві 'string' (W8113)
     start_time = fields.Float(required=True)
     end_time = fields.Float(required=True)
 
