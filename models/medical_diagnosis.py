@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """This file defines the Medical Diagnosis model."""
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -66,7 +66,7 @@ class MedicalDiagnosis(models.Model):
         for record in self:
             if record.approval_date and record.visit_id.visit_date and \
                     record.approval_date < record.visit_id.visit_date:
-                raise UserError(self.env._("Approval date cannot be earlier than "
+                raise UserError(_("Approval date cannot be earlier than "
                                   "the visit date."))
 
     def action_approve_diagnosis(self):
@@ -76,19 +76,19 @@ class MedicalDiagnosis(models.Model):
         ], limit=1)
 
         if not current_doctor:
-            raise UserError(self.env._("Ви не можете затверджувати діагнози, "
+            raise UserError(_("Ви не можете затверджувати діагнози, "
                               "оскільки ваш користувач не прив'язаний до профілю лікаря."))
 
         for record in self:
             if not record.visit_id:
-                raise UserError(self.env._("Неможливо затвердити діагноз без візиту."))
+                raise UserError(_("Неможливо затвердити діагноз без візиту."))
 
             intern_doctor = record.visit_id.doctor_id
 
             if intern_doctor and intern_doctor.is_intern:
 
                 if intern_doctor.mentor_id != current_doctor:
-                    raise UserError(self.env._("Тільки призначений ментор (%s) "
+                    raise UserError(_("Тільки призначений ментор (%s) "
                                       "може затвердити цей діагноз інтерна.",
                                       intern_doctor.mentor_id.full_name))
 

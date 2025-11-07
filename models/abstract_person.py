@@ -3,7 +3,7 @@
 
 import re
 from datetime import date
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -75,15 +75,15 @@ class AbstractPerson(models.AbstractModel):
         """Validator: Ensures age is positive."""
         for record in self:
             if record.birthday and record.birthday > fields.Date.today():
-                raise ValidationError(self.env._("Birthday cannot be in the future!"))
+                raise ValidationError(_("Birthday cannot be in the future!"))
 
-    @api.constrains('phone')  # Валідатор Python
+    @api.constrains('phone')  # ВалідаTор Python
     def _check_phone(self):
         """Validator: Ensures phone format is (somewhat) valid."""
         for record in self:
             if record.phone and not re.match(r'^\+?[\d\s\-\(\)]{7,20}$',
                                              record.phone):
-                raise ValidationError(self.env._("Invalid phone number format."))
+                raise ValidationError(_("Invalid phone number format."))
 
     @api.onchange('country_id')
     def _onchange_country_set_lang(self):

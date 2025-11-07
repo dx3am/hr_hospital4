@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """This file defines the Patient Visit model."""
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -116,7 +116,7 @@ class PatientVisit(models.Model):
                 ('visit_date', '<=', f'{visit_day} 23:59:59'),
             ]
             if self.search_count(domain) > 0:
-                raise ValidationError(self.env._(
+                raise ValidationError(_(
                     "This patient already has a visit with this doctor "
                     "on the same day."))
 
@@ -127,7 +127,7 @@ class PatientVisit(models.Model):
             if record.status == 'completed' and \
                     any(field in vals for field in
                         ['doctor_id', 'patient_id', 'visit_date']):
-                raise ValidationError(self.env._(
+                raise ValidationError(_(
                     "Cannot change date, doctor, or patient "
                     "on a completed visit."))
 
@@ -143,7 +143,7 @@ class PatientVisit(models.Model):
         """Computes the display name to show 'Patient Name @ Visit Date'."""
         for visit in self:
             patient_name = visit.patient_id.full_name if visit.patient_id \
-                else self.env._("Unknown Patient")
+                else _("Unknown Patient")
 
             visit_date_str = ''
             if visit.visit_date:

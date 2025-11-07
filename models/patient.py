@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """This file defines the Patient model."""
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class Patient(models.Model):
@@ -74,7 +74,7 @@ class Patient(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': self.env._('Patient Visits'),
+            'name': _('Patient Visits'),
             'res_model': 'hr.hospital.patient.visit',
             'view_mode': 'tree,form,calendar',
             'domain': [('patient_id', '=', self.id)],
@@ -88,7 +88,7 @@ class Patient(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': self.env._('New Visit'),
+            'name': _('New Visit'),
             'res_model': 'hr.hospital.patient.visit',
             'view_mode': 'form',
             'target': 'new',
@@ -104,8 +104,8 @@ class Patient(models.Model):
         if self.allergies:
             return {
                 'warning': {
-                    'title': self.env._("Allergy Alert"),
-                    'message': self.env._(
+                    'title': _("Allergy Alert"),
+                    'message': _(
                         "This patient has known allergies: %s",
                         self.allergies
                     ),
@@ -123,7 +123,7 @@ class Patient(models.Model):
                 history_env.create({
                     'patient_id': record.id,
                     'doctor_id': record.personal_doctor_id.id,
-                    'change_reason': self.env._('Initial assignment.'),
+                    'change_reason': _('Initial assignment.'),
                 })
         return records
 
@@ -137,7 +137,7 @@ class Patient(models.Model):
                     history_vals_list.append({
                         'patient_id': record.id,
                         'doctor_id': vals['personal_doctor_id'],
-                        'change_reason': self.env._('Doctor changed by user.'),
+                        'change_reason': _('Doctor changed by user.'),
                     })
 
         result = super().write(vals)

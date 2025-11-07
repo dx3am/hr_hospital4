@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """This file defines the Doctor model."""
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 
 
@@ -60,14 +60,14 @@ class Doctor(models.Model):
         """Validator: An intern cannot be selected as a mentor."""
         for record in self:
             if record.mentor_id and record.mentor_id.is_intern:
-                raise ValidationError(self.env._("An intern cannot be a mentor."))
+                raise ValidationError(_("An intern cannot be a mentor."))
 
     @api.constrains('mentor_id')  # Валідатор Python
     def _check_mentor_not_self(self):
         """Validator: A doctor cannot be their own mentor."""
         for record in self:
             if record.mentor_id and record.mentor_id == record:
-                raise ValidationError(self.env._("A doctor cannot be their own mentor."))
+                raise ValidationError(_("A doctor cannot be their own mentor."))
 
     @api.depends('license_date')  # Обчислювальне поле
     def _compute_experience_years(self):
@@ -102,7 +102,7 @@ class Doctor(models.Model):
         ])
         if active_visits:
             raise ValidationError(
-                self.env._("Cannot archive doctors with planned visits."))
+                _("Cannot archive doctors with planned visits."))
         return super().action_archive()
 
     def action_view_patients_by_language(self):
@@ -113,13 +113,13 @@ class Doctor(models.Model):
         self.ensure_one()
 
         if not self.language_id:
-            raise UserError(self.env._("У цього лікаря не вказана мова спілкування."))
+            raise UserError(_("У цього лікаря не вказана мова спілкування."))
 
         domain = [('language_id', '=', self.language_id.id)]
 
         return {
             'type': 'ir.actions.act_window',
-            'name': self.env._('Пацієнти (%s)', self.language_id.name),
+            'name': _('Пацієнти (%s)', self.language_id.name),
             'res_model': 'hr.hospital.patient',
             'view_mode': 'tree,form',
             'domain': domain,
@@ -133,7 +133,7 @@ class Doctor(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': self.env._('New Visit'),
+            'name': _('New Visit'),
             'res_model': 'hr.hospital.patient.visit',
             'view_mode': 'form',
             'target': 'new',
