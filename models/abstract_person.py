@@ -88,10 +88,20 @@ class AbstractPerson(models.AbstractModel):
     @api.onchange('country_id')
     def _onchange_country_set_lang(self):
         """Suggests the country's language when citizenship is changed."""
-        if self.country_id:
+        if self.country_id and self.country_id.code:
+            lang_code_like = f'%_{self.country_id.code}'
             lang = self.env['res.lang'].search([
-                ('country_id', '=', self.country_id.id)
+                ('code', 'ilike', lang_code_like),
+                ('active', '=', True)
             ], limit=1)
+
+            if not lang:
+                lang_code_short = self.country_id.code.lower()
+                lang = self.env['res.lang'].search([
+                    ('code', '=', lang_code_short),
+                    ('active', '=', True)
+                ], limit=1)
+
             self.language_id = lang.id if lang else False
         else:
             self.language_id = False
