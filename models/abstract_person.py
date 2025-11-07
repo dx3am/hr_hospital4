@@ -77,7 +77,7 @@ class AbstractPerson(models.AbstractModel):
             if record.birthday and record.birthday > fields.Date.today():
                 raise ValidationError(_("Birthday cannot be in the future!"))
 
-    @api.constrains('phone')  # ВалідаTор Python
+    @api.constrains('phone')  # Валідатор Python
     def _check_phone(self):
         """Validator: Ensures phone format is (somewhat) valid."""
         for record in self:
@@ -88,7 +88,10 @@ class AbstractPerson(models.AbstractModel):
     @api.onchange('country_id')
     def _onchange_country_set_lang(self):
         """Suggests the country's language when citizenship is changed."""
-        if self.country_id and self.country_id.lang_id:
-            self.language_id = self.country_id.lang_id
+        if self.country_id:
+            lang = self.env['res.lang'].search([
+                ('country_id', '=', self.country_id.id)
+            ], limit=1)
+            self.language_id = lang.id if lang else False
         else:
             self.language_id = False
